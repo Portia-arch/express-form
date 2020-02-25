@@ -1,4 +1,4 @@
 *node_modueles
-*yaml
-*env
-*json
+*.yaml
+*.env
+*.json

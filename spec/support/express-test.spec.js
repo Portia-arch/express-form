@@ -22,7 +22,7 @@ describe('Express form', function(){
         done()
     });
 
-    fit('should submit the form', async function(){
+    it('should submit the form', async function(){
 
         const visitor = {
             name: 'Nhlanhla',
@@ -39,7 +39,7 @@ describe('Express form', function(){
         // let id = res.data.match(/\d+/g)[2];
 
         expect(res.data).toEqual(success(
-            id, visitor.name, visitor.age, visitor.date, visitor.time, visitor.assistant, visitor.comments
+            id, visitor.name, visitor.assistant, visitor.age, visitor.date, visitor.time, visitor.comments
         ));	
     });
 
