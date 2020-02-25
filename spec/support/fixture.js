@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+const html = `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,9 +26,8 @@
 
             <br>
             <label for="age"><b>Visitor's Age:</b></label>
-            <input type="age" placeholder="Visitor's Age" name="visitor_age" required>
+            <input type="age" placeholder="Visitor's Age:" name="visitor_age" required>
 
-            <br>
             <br>
             <label for="date"><b>Date:</b></label>
             <input type="date" placeholder="Enter Date" name="date" required>
@@ -49,4 +48,6 @@
     </div>
 </body>
 
-</html>
+</html>`;
+
+module.exports = html;
