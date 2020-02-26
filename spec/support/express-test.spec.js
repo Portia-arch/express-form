@@ -22,24 +22,10 @@ describe('Express form', function(){
         done()
     });
 
-    it('should submit the form', async function(){
-
-        const visitor = {
-            name: 'Nhlanhla',
-            assistant: 'Weston',
-            age: 43,
-            date: '12/07/2021',
-            time: '12:34',
-            comments: 'hello sucker'
-
-        };
-
-        const res = await axios.post('http://127.0.0.1:3000/new_visitor', visitor);
-
-        // let id = res.data.match(/\d+/g)[2];
+    xit('should submit the form', async function(){
 
         expect(res.data).toEqual(success(
-            id, visitor.name, visitor.assistant, visitor.age, visitor.date, visitor.time, visitor.comments
+            id, visitor.name, visitor.ass_name, visitor.age, visitor.date, visitor.time, visitor.comments
         ));	
     });
 
