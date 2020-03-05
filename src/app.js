@@ -21,7 +21,7 @@ app.get("/new_visitor", function(req, res) {
 
 createTable();
 
-app.post("/new_visit", function(req, res) {
+app.post("/new_visit", async function(req, res) {
   let name = req.body.visitor_name;
   let ass_name = req.body.assistant_name;
   let age = req.body.visitor_age;
@@ -29,8 +29,9 @@ app.post("/new_visit", function(req, res) {
   let time = req.body.time;
   let comment = req.body.comment;
 
-  addNewVisitor(name, ass_name, age, date, time, comment);
+  const visitor = await addNewVisitor(name, ass_name, age, date, time, comment);
   res.render("newVisitor", {
+      visitorId: visitor[0].id,
       name: req.body.visitor_name,
       ass_name: req.body.assistant_name,
       age: req.body.visitor_age,
