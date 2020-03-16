@@ -1,15 +1,14 @@
 describe('Express form', function(){
     const axios = require('axios');
-    const fixture =  require('./fixture')
+    const readLine  = require('readline');
+    const fixture =  require('./fixture');
+    const success = require('./success')
+
 
 
     beforeEach(function(){
         port = require('../../src/app');
     });
-
-    // afterEach(function(){
-    //     port.close()
-    // });
 
     it('should open an html form on the browser', async function(done){
         try{
@@ -19,13 +18,22 @@ describe('Express form', function(){
         catch(error) {
             console.log(error)
         };
-        done()
+        done();
     });
 
     xit('should submit the form', async function(){
 
-        expect(res.data).toEqual(success(
-            id, visitor.name, visitor.ass_name, visitor.age, visitor.date, visitor.time, visitor.comments
+        const visitor = {
+            name: 'Hloni',
+            ass_name: 'Tadiwa',
+            age: '23',
+            time: '175:50',
+            date: '12//02/2020',
+            comments: 'HAlo'
+        }
+
+        expect(success.data).toEqual(success(
+         visitor.name, visitor.ass_name, visitor.age, visitor.time, visitor.date, visitor.comments
         ));	
     });
 
